@@ -54,9 +54,9 @@ export default class BlinkApp extends Component {
         <View style={{flex: 4}}>
           <Blink text='I love to 23' />
         </View>
-        <View style={{flex: 10, flexDirection: 'column', justifyContent: 'space-between',}}>
+        <View style={{flex: 10, flexDirection: 'column', alignSelf: 'center',}}>
           <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-          <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+          <View style={{height: 50, backgroundColor: 'skyblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
         </View>
       </View>

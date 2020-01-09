@@ -12,6 +12,9 @@ import {
   View, 
   TouchableHighlight 
 } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack'
+import {detectFaces} from 'face-recognition-react-native';
 
 const styles = StyleSheet.create({
   title: {
@@ -63,13 +66,13 @@ export default class AuthScreen extends Component {
     };
     this.username = React.createRef();
   }
-
+  
   componentDidMount() {
     /*this.username.current.focus();*/
   }
 
   _onPressLoginButton() {
-    alert('You tapped the button!')
+    detectFaces(imageUrl:string).then(result => {}, e=> {});
   }
   
   /* render() {
@@ -93,7 +96,7 @@ export default class AuthScreen extends Component {
   render() {
     return (
       <View style={{flex: 1, backgroundColor: 'white',}}>
-        <StatusBar barStyle="dark-content" backgroundColor="white" />
+        <StatusBar barStyle="dark-content" backgroundColor="#3788C7" />
         <View style={{flex: 4, alignItems: 'center', justifyContent: 'center',}}>
           <Text style={styles.appTitle}>技术学校APP</Text>
         </View>
@@ -116,6 +119,7 @@ export default class AuthScreen extends Component {
           />
 
           <TouchableHighlight 
+            //onPress={() => this.props.navigation.navigate('学校信息')}
             onPress={this._onPressLoginButton}
             style={styles.loginBtn}
             underlayColor='#6992EB'>

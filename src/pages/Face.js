@@ -1,0 +1,1 @@
+import {detectFaces} from 'face-recognition-react-native';
